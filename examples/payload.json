@@ -1,0 +1,6 @@
+{
+  "title": "Something happened",
+  "body": "Details about what happened.",
+  "level": "warning",
+  "url": "https://example.com"
+}

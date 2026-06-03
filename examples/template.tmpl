@@ -1,0 +1,19 @@
+{{- /*
+  Renders the DATA section of an email from a generic notification
+  payload (title / body / level / url).
+
+  Demonstrates the building blocks of a hook2email template:
+    - the first line is the Subject header
+    - additional operator-chosen headers may follow (here: Auto-Submitted,
+      RFC 3834, to suppress vacation responders)
+    - a blank line separates headers from body
+    - {{ with }} for optional sections
+*/ -}}
+Subject: [{{.level}}] {{.title}}
+Auto-Submitted: auto-generated
+
+{{ with .body }}{{.}}
+{{ end }}
+{{- with .url -}}
+{{.}}
+{{ end }}

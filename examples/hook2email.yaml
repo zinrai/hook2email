@@ -1,0 +1,14 @@
+listen: ":8080"
+schema_file: /etc/hook2email/schema.json
+template_file: /etc/hook2email/template.tmpl
+endpoints:
+  - path: /webhooks/ops
+    smtp:
+      server: localhost:25
+      from: alerts@example.com
+      to: oncall-ops@example.com
+  - path: /webhooks/dev
+    smtp:
+      server: localhost:25
+      from: alerts@example.com
+      to: oncall-dev@example.com
